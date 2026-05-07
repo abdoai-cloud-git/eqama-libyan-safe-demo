@@ -6,6 +6,7 @@ import { demoCases } from '@/lib/demo-data/cases';
 import { demoWorkers } from '@/lib/demo-data/workers';
 import { demoServices } from '@/lib/demo-data/services';
 import { qualifyApplicant } from '@/lib/qualification/rules';
+import { createCaseUpdate } from '@/lib/pipeline';
 
 type DemoStore = {
   cases: ResidencyCase[];
@@ -36,6 +37,7 @@ export const useDemoStore = create<DemoStore>((set, get) => ({
       status: qualification.caseStatus,
       paymentStatus: 'لم يطلب بعد',
       internalNotes: ['تم إنشاء الحالة من شات التأهيل.', qualification.internalSummary],
+      clientUpdates: [createCaseUpdate(qualification.caseStatus, qualification.internalSummary)],
       owner: 'غير محدد',
       lastUpdated: today(),
     };
@@ -43,7 +45,13 @@ export const useDemoStore = create<DemoStore>((set, get) => ({
     return newCase;
   },
   updateCaseStatus: (id, status) => set((state) => ({
-    cases: state.cases.map((item) => item.id === id ? { ...item, status, lastUpdated: today(), internalNotes: [`تم تغيير الحالة إلى: ${status}`, ...item.internalNotes] } : item),
+    cases: state.cases.map((item) => item.id === id ? {
+      ...item,
+      status,
+      lastUpdated: today(),
+      internalNotes: [`تم تغيير الحالة إلى: ${status}`, ...item.internalNotes],
+      clientUpdates: [createCaseUpdate(status), ...item.clientUpdates],
+    } : item),
   })),
   updatePayment: (id, paymentStatus) => set((state) => ({
     cases: state.cases.map((item) => item.id === id ? {
@@ -54,6 +62,10 @@ export const useDemoStore = create<DemoStore>((set, get) => ({
       depositReceivedBy: paymentStatus === 'تم استلام المقدم' || paymentStatus === 'مكتمل' ? 'أيوب' : item.depositReceivedBy,
       lastUpdated: today(),
       internalNotes: [`تم تحديث الدفع إلى: ${paymentStatus}`, ...item.internalNotes],
+      clientUpdates: [
+        createCaseUpdate(paymentStatus === 'تم استلام المقدم' ? 'تم استلام المقدم' : item.status, `تم تحديث حالة الدفع إلى: ${paymentStatus}`),
+        ...item.clientUpdates,
+      ],
     } : item),
   })),
   addNote: (id, note) => set((state) => ({

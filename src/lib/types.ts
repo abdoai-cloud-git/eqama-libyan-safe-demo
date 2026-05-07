@@ -40,6 +40,16 @@ export interface QualificationResult {
   missingInfo: string[];
 }
 
+export interface CaseUpdate {
+  id: string;
+  at: string;
+  status: CaseStatus;
+  title: string;
+  clientMessage: string;
+  internalNote: string;
+  visibleToClient: boolean;
+}
+
 export interface ResidencyCase extends ApplicantAnswers {
   id: string;
   createdAt: string;
@@ -51,6 +61,7 @@ export interface ResidencyCase extends ApplicantAnswers {
   depositReceivedAt?: string;
   depositReceivedBy?: string;
   internalNotes: string[];
+  clientUpdates: CaseUpdate[];
   owner: string;
   lastUpdated: string;
 }

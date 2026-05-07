@@ -8,7 +8,7 @@ export function Shell({ children }: { children: ReactNode }) {
 
 export function TopNav() {
   const links = [
-    ['لوحة الإدارة','/admin'], ['الحالات','/admin'], ['العمال','/admin/workers'], ['الخدمات','/admin/services'], ['طلبات B2B','/admin/b2b'],
+    ['لوحة الإدارة','/admin'], ['الحالات','/admin'], ['متابعة عميل','/status'], ['العمال','/admin/workers'], ['الخدمات','/admin/services'], ['طلبات B2B','/admin/b2b'],
   ];
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/90 backdrop-blur">
@@ -17,7 +17,7 @@ export function TopNav() {
           <span className="grid h-10 w-10 place-items-center rounded-2xl bg-teal-700 text-lg font-black text-white">آ</span>
           <span><span className="block font-bold text-slate-950">الإقامة الليبية الآمنة</span><span className="text-xs text-slate-500">للخدمات العمالية</span></span>
         </Link>
-        <nav className="hidden items-center gap-2 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {links.map(([label, href]) => <Link key={href+label} href={href} className="rounded-full px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 hover:text-teal-800">{label}</Link>)}
         </nav>
         <Link href="/intake" className="rounded-full bg-teal-700 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-teal-800">ابدأ التقييم</Link>

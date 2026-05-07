@@ -1,5 +1,6 @@
 import type { ResidencyCase } from '@/lib/types';
 import { qualifyApplicant } from '@/lib/qualification/rules';
+import { createCaseUpdate } from '@/lib/pipeline';
 
 const people = [
   ['محمد حسن','0911111101','مصري',32,'TikTok','current_residency',true,true,true,'مؤهل مبدئيًا','بانتظار دفع المقدم','بانتظار الدفع'],
@@ -51,6 +52,10 @@ export const demoCases: ResidencyCase[] = people.map((p, index) => {
     depositReceivedAt: paymentStatus === 'تم استلام المقدم' || paymentStatus === 'مكتمل' ? '2026-05-05' : undefined,
     depositReceivedBy: paymentStatus === 'تم استلام المقدم' || paymentStatus === 'مكتمل' ? 'أيوب' : undefined,
     internalNotes: ['تم إنشاء الحالة من بيانات الديمو.', qualification.internalSummary],
+    clientUpdates: [
+      ...(status !== 'طلب جديد' ? [createCaseUpdate(status, `حالة ديمو في مرحلة: ${status}`)] : []),
+      createCaseUpdate('طلب جديد', 'تم إنشاء الحالة من بيانات الديمو.'),
+    ],
     owner: ['أيوب','سارة','محمود'][index % 3],
     lastUpdated: `2026-05-${String((index % 20) + 1).padStart(2, '0')}`,
   };
