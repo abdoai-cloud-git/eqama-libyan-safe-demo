@@ -6,6 +6,7 @@ import { HelpCircle, Search, ShieldCheck } from 'lucide-react';
 import { ClientPipeline } from '@/components/client-pipeline';
 import { Badge, Card, PageTitle, Shell, TopNav, statusTone } from '@/components/ui';
 import { useDemoStore } from '@/store/demo-store';
+import { TutorialGuide } from '@/components/tutorial-guide';
 
 function nextCustomerAction(status: string) {
   if (status === 'بانتظار دفع المقدم') return 'انتظر رسالة الفريق بتعليمات الدفع الرسمية، ولا تدفع لأي جهة غير القنوات المعتمدة.';
@@ -32,6 +33,7 @@ export default function ClientStatusPage() {
   return (
     <><TopNav /><Shell>
       <PageTitle title="متابعة حالة العميل" subtitle="صفحة ديمو توضح كيف يمكن للعميل رؤية حالة الطلب، الإجراء التالي، والتحديثات العامة بدون كشف الملاحظات الداخلية." />
+      <TutorialGuide page="status" />
       <Card className="mb-6">
         <div className="mb-3 flex items-start gap-3 rounded-2xl bg-slate-50 p-3 text-sm leading-7 text-slate-600">
           <ShieldCheck className="mt-1 text-amber-600" size={18} />

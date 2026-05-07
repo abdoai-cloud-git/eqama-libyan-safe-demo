@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { ArrowLeft, BriefcaseBusiness, ClipboardCheck, GitBranch, MessageCircle, ShieldCheck } from 'lucide-react';
 import { Card, Shell, TopNav } from '@/components/ui';
+import { TutorialGuide } from '@/components/tutorial-guide';
 
 export default function Home() {
   return (
     <><TopNav /><Shell>
+      <TutorialGuide page="home" />
       <section className="grid gap-8 py-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
         <div>
           <div className="mb-4 inline-flex rounded-full border border-amber-300/40 bg-slate-950 px-4 py-2 text-sm font-black text-amber-200 shadow-lg shadow-amber-950/10">LSR · Libyan Safe Residence</div>

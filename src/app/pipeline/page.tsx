@@ -24,6 +24,7 @@ import {
   type PipelineClient,
 } from '@/lib/pipeline-demo';
 import { cn } from '@/lib/utils';
+import { TutorialGuide } from '@/components/tutorial-guide';
 
 export default function PipelinePage() {
   const [clients, setClients] = useState<PipelineClient[]>(initialPipelineClients);
@@ -69,6 +70,7 @@ export default function PipelinePage() {
           title="مسار العملاء"
           subtitle="فَنَل تشغيلي يدعم السحب والإفلات بين المراحل، مع درج جانبي لتعديل العميل ومتابعة المستندات والسجل."
         />
+        <TutorialGuide page="pipeline" />
 
         <section className="mb-6 rounded-3xl bg-slate-950 p-5 text-white shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -156,20 +158,23 @@ export default function PipelinePage() {
                             <p className="font-black text-slate-950">{client.name}</p>
                             <p className="mt-1 text-xs text-slate-500" dir="ltr">{client.idNumber}</p>
                           </button>
-                          <button
-                            type="button"
-                            draggable
-                            onDragStart={(event) => {
-                              setDraggingId(client.idNumber);
-                              event.dataTransfer.setData('text/plain', client.idNumber);
-                              event.dataTransfer.effectAllowed = 'move';
-                            }}
-                            onDragEnd={() => setDraggingId(null)}
-                            className="shrink-0 cursor-grab rounded-full p-1 text-slate-300 hover:bg-slate-100 hover:text-amber-600"
-                            aria-label={`اسحب ${client.name} إلى مرحلة أخرى`}
-                          >
-                            <GripVertical size={18} aria-hidden="true" />
-                          </button>
+                          <div className="flex shrink-0 flex-col items-center gap-1">
+                            <button
+                              type="button"
+                              draggable
+                              onDragStart={(event) => {
+                                setDraggingId(client.idNumber);
+                                event.dataTransfer.setData('text/plain', client.idNumber);
+                                event.dataTransfer.effectAllowed = 'move';
+                              }}
+                              onDragEnd={() => setDraggingId(null)}
+                              className="cursor-grab rounded-full p-1 text-slate-300 hover:bg-slate-100 hover:text-amber-600"
+                              aria-label={`اسحب ${client.name} إلى مرحلة أخرى`}
+                            >
+                              <GripVertical size={18} aria-hidden="true" />
+                            </button>
+                            <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-black text-amber-800">اسحب</span>
+                          </div>
                         </div>
                         <div className="mt-3 flex items-center justify-between gap-2">
                           <Badge tone={statusTone(client.status)}>{client.status}</Badge>
@@ -181,13 +186,14 @@ export default function PipelinePage() {
                           <span>{client.paymentStatus}</span>
                         </div>
                         <div className="mt-3 flex gap-2">
-                          <button type="button" onClick={() => selectClient(client.idNumber)} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700">فتح التفاصيل</button>
+                          <button type="button" onClick={() => selectClient(client.idNumber)} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700" title="راجع المستندات والسجل">فتح التفاصيل</button>
                           {client.currentStageId < pipelineStages.length && (
-                            <button type="button" onClick={() => moveClientToStage(client.idNumber, client.currentStageId + 1)} className="rounded-full bg-amber-600 px-3 py-1.5 text-xs font-bold text-white">
+                            <button type="button" onClick={() => moveClientToStage(client.idNumber, client.currentStageId + 1)} className="rounded-full bg-amber-600 px-3 py-1.5 text-xs font-bold text-white" title="ينقل العميل خطوة واحدة للأمام">
                               نقل للتالي
                             </button>
                           )}
                         </div>
+                        <p className="mt-2 text-[11px] leading-5 text-slate-400">فتح التفاصيل يراجع المستندات والسجل، ونقل للتالي يحرك العميل خطوة واحدة.</p>
                       </article>
                     ))}
                   </div>

@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Badge, Card, PageTitle, Shell, TopNav, statusTone } from '@/components/ui';
 import type { ApplicantAnswers, EntryMethod } from '@/lib/types';
 import { useDemoStore } from '@/store/demo-store';
+import { TutorialGuide } from '@/components/tutorial-guide';
 
 type Draft = Partial<ApplicantAnswers>;
 const nationalities = ['مصري','سوداني','تشادي','نيجري','سوري','بنغلاديشي','باكستاني','غاني'];
@@ -67,8 +68,9 @@ export default function IntakePage() {
   };
 
   return <><TopNav/><Shell><PageTitle title="شات التأهيل" subtitle="سؤال واحد في كل مرة. لا نذكر سعرًا ولا نطلب دفعًا قبل مراجعة الفريق." />
+    <TutorialGuide page="intake" />
     <div className="grid gap-6 lg:grid-cols-[.8fr_1.2fr]">
-      <Card><div className="mb-4 flex items-center justify-between"><span className="font-bold">التقدم</span><Badge><span dir="rtl">الخطوة {Math.min(step+1, steps.length)} من {steps.length}</span></Badge></div><div className="h-3 overflow-hidden rounded-full bg-slate-100"><div className="h-full bg-amber-600 transition-all" style={{width:`${((step+1)/steps.length)*100}%`}} /></div><p className="mt-4 text-sm leading-7 text-slate-600">الهدف ليس أخذ قرار نهائي، بل تصنيف مبدئي واضح وتحويل العميل إلى حالة للفريق.</p></Card>
+      <Card><div className="mb-4 flex items-center justify-between"><span className="font-bold">التقدم</span><Badge><span dir="rtl">الخطوة {Math.min(step+1, steps.length)} من {steps.length}</span></Badge></div><div className="h-3 overflow-hidden rounded-full bg-slate-100"><div className="h-full bg-amber-600 transition-all" style={{width:`${((step+1)/steps.length)*100}%`}} /></div><p className="mt-4 text-sm leading-7 text-slate-600">أجب بالترتيب للحصول على نتيجة أوضح. لا يتم طلب الدفع قبل القبول المبدئي.</p></Card>
       <Card>
         {createdCase ? <div className="space-y-5"><CheckCircle2 className="h-12 w-12 text-amber-600"/><Badge tone={statusTone(createdCase.qualification.classification)}>{createdCase.qualification.classification}</Badge><h2 className="text-2xl font-black">{createdCase.qualification.caseStatus}</h2><p className="leading-8 text-slate-700">{createdCase.qualification.customerMessage}</p><div className="rounded-2xl bg-slate-50 p-4 text-sm leading-7"><b>السبب:</b> {createdCase.qualification.reason}<br/><b>الخطوة القادمة:</b> {createdCase.qualification.nextStep}</div><Link href={`/admin/cases/${createdCase.id}`} className="inline-flex rounded-2xl bg-amber-600 px-5 py-3 font-bold text-white">فتح الحالة في لوحة الفريق</Link></div> : <div><p className="mb-4 text-sm font-bold text-amber-900">{steps[step].label} <span className="text-rose-600">*</span></p>{steps[step].render}{stepError && <p className="mt-3 rounded-2xl bg-rose-50 px-4 py-3 text-sm font-bold text-rose-700">{stepError}</p>}<p className="mt-3 text-xs leading-6 text-slate-500">نستخدم هذه البيانات للتقييم المبدئي فقط، ولا نطلب أي دفع قبل مراجعة الفريق.</p><div className="mt-8 flex justify-between"><button className="btn-secondary" disabled={step===0} onClick={()=>{ setStepError(''); setStep(Math.max(0,step-1)); }}><ArrowRight size={16}/> السابق</button>{step < steps.length-1 ? <button className="btn-primary" onClick={goNext}>التالي <ArrowLeft size={16}/></button> : <button className="btn-primary" disabled={!canSubmit} onClick={submit}>إظهار النتيجة</button>}</div></div>}
       </Card>
