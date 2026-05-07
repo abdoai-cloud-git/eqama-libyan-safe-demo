@@ -20,7 +20,7 @@ export default function AdminPage() {
   ];
   return <><TopNav/><Shell><PageTitle title="لوحة إدارة الحالات" subtitle="هنا يظهر الفرق بين شات تأهيل بسيط ونظام متابعة: كل عميل له حالة، سبب، دفع، مسؤول، وآخر تحديث." />
     <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{stats.map(({ label, value, Icon }) => <Card key={label} className="p-4"><div className="flex items-start justify-between"><div><p className="text-sm text-slate-500">{label}</p><p className="mt-2 text-3xl font-black">{value}</p></div><Icon className="text-teal-700"/></div></Card>)}</div>
-    <div className="mb-4 flex flex-wrap gap-2">{['TikTok','Facebook','Direct Link','الدفع كاش فقط','لا طلب دفع قبل القبول'].map(x => <Badge key={x} tone={x.includes('لا')?'amber':'teal'}>{x}</Badge>)}</div>
+    <div className="mb-4 flex flex-wrap gap-2">{['تيك توك','فيسبوك','رابط مباشر','الدفع كاش فقط','لا طلب دفع قبل القبول'].map(x => <Badge key={x} tone={x.includes('لا')?'amber':'teal'}>{x}</Badge>)}</div>
     <CasesTable />
   </Shell></>;
 }

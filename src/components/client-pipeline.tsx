@@ -19,7 +19,7 @@ export function ClientPipeline({ item }: { item: ResidencyCase }) {
     <Card>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="text-lg font-black">Pipeline العميل</h2>
+          <h2 className="text-lg font-black">مسار الطلب</h2>
           <p className="mt-1 text-sm leading-6 text-slate-600">هذا هو التحديث الذي يمكن للفريق مشاركته مع العميل بدون كشف الملاحظات الداخلية.</p>
         </div>
         <Badge tone={statusTone(item.status)}>{item.status}</Badge>

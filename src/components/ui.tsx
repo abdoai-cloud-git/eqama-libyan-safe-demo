@@ -8,7 +8,7 @@ export function Shell({ children }: { children: ReactNode }) {
 
 export function TopNav() {
   const links = [
-    ['لوحة الإدارة','/admin'], ['الحالات','/admin'], ['Pipeline','/pipeline'], ['متابعة عميل','/status'], ['العمال','/admin/workers'], ['الخدمات','/admin/services'], ['طلبات B2B','/admin/b2b'],
+    ['لوحة الإدارة','/admin'], ['الحالات','/admin'], ['مسار العملاء','/pipeline'], ['متابعة عميل','/status'], ['العمال','/admin/workers'], ['الخدمات','/admin/services'], ['طلبات الشركات','/admin/b2b'],
   ];
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/90 backdrop-blur">
