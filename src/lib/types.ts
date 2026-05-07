@@ -107,3 +107,21 @@ export interface B2BRequest {
   notes: string;
   lastUpdated: string;
 }
+
+export interface PipelineStage {
+  id: number;
+  name: string;
+  description: string;
+}
+
+export interface Client {
+  name: string;
+  idNumber: string;
+  currentStageId: number;
+  status: CaseStatus;
+  email: string;
+  phone: string;
+  address: string;
+  applicationDate: string;
+  lastUpdated: string;
+}
