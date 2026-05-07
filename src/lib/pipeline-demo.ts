@@ -84,6 +84,26 @@ export function createStageActivity(clientName: string, stageId: number): Pipeli
   };
 }
 
+export function movePipelineClient(clients: PipelineClient[], clientId: string, stageId: number): PipelineClient[] {
+  const targetClient = clients.find((client) => client.idNumber === clientId);
+  const stageExists = pipelineStages.some((stage) => stage.id === stageId);
+  if (!stageExists || !targetClient || targetClient.currentStageId === stageId) return clients;
+
+  return clients.map((client) => {
+    if (client.idNumber !== clientId) return client;
+    return {
+      ...client,
+      currentStageId: stageId,
+      status: statusByStage[stageId] ?? client.status,
+      paymentStatus: paymentStatusByStage[stageId] ?? client.paymentStatus,
+      nextAction: nextActionByStage[stageId] ?? client.nextAction,
+      stageEnteredAt: 'الآن',
+      lastUpdated: '2026-05-07',
+      activity: [createStageActivity(client.name, stageId), ...client.activity],
+    };
+  });
+}
+
 export const initialPipelineClients: PipelineClient[] = [
   {
     name: 'أحمد محمد',
