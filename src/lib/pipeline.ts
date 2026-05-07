@@ -27,10 +27,10 @@ export function getClientStatusMessage(status: CaseStatus): string {
   return messages[status];
 }
 
-export function createCaseUpdate(status: CaseStatus, internalNote?: string): CaseUpdate {
+export function createCaseUpdate(status: CaseStatus, internalNote?: string, options?: { id?: string; at?: string }): CaseUpdate {
   return {
-    id: `UPD-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
-    at: new Date().toISOString(),
+    id: options?.id ?? `UPD-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+    at: options?.at ?? new Date().toISOString(),
     status,
     title: `تحديث الحالة: ${status}`,
     clientMessage: getClientStatusMessage(status),

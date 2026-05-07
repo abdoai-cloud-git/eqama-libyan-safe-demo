@@ -4,6 +4,12 @@ import type { ResidencyCase } from '@/lib/types';
 import { getPipelineIndex, pipelineStages } from '@/lib/pipeline';
 import { Badge, Card, statusTone } from '@/components/ui';
 
+function formatUpdateTime(value: string) {
+  const [date = value, rawTime = ''] = value.split('T');
+  const time = rawTime.slice(0, 5);
+  return time ? `${date} ${time}` : date;
+}
+
 export function ClientPipeline({ item }: { item: ResidencyCase }) {
   const activeIndex = getPipelineIndex(item.status);
   const isStopped = activeIndex < 0;
@@ -45,7 +51,7 @@ export function ClientPipeline({ item }: { item: ResidencyCase }) {
             <div key={update.id} className="rounded-2xl border border-slate-100 bg-white p-4">
               <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
                 <Badge tone={statusTone(update.status)}>{update.status}</Badge>
-                <span className="text-xs text-slate-400">{new Date(update.at).toLocaleString('ar-LY')}</span>
+                <span className="text-xs text-slate-400">{formatUpdateTime(update.at)}</span>
               </div>
               <p className="font-bold text-slate-900">{update.title}</p>
               <p className="mt-1 text-sm leading-7 text-slate-600">{update.clientMessage}</p>

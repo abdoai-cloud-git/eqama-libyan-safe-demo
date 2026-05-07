@@ -53,8 +53,8 @@ export const demoCases: ResidencyCase[] = people.map((p, index) => {
     depositReceivedBy: paymentStatus === 'تم استلام المقدم' || paymentStatus === 'مكتمل' ? 'أيوب' : undefined,
     internalNotes: ['تم إنشاء الحالة من بيانات الديمو.', qualification.internalSummary],
     clientUpdates: [
-      ...(status !== 'طلب جديد' ? [createCaseUpdate(status, `حالة ديمو في مرحلة: ${status}`)] : []),
-      createCaseUpdate('طلب جديد', 'تم إنشاء الحالة من بيانات الديمو.'),
+      ...(status !== 'طلب جديد' ? [createCaseUpdate(status, `حالة ديمو في مرحلة: ${status}`, { id: `${String(index + 1).padStart(4, '0')}-current`, at: `2026-05-${String((index % 20) + 1).padStart(2, '0')}T12:00:00.000Z` })] : []),
+      createCaseUpdate('طلب جديد', 'تم إنشاء الحالة من بيانات الديمو.', { id: `${String(index + 1).padStart(4, '0')}-created`, at: `2026-05-${String((index % 20) + 1).padStart(2, '0')}T09:00:00.000Z` }),
     ],
     owner: ['أيوب','سارة','محمود'][index % 3],
     lastUpdated: `2026-05-${String((index % 20) + 1).padStart(2, '0')}`,
