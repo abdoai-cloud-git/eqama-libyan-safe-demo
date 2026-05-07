@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, BriefcaseBusiness, ClipboardCheck, MessageCircle, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, BriefcaseBusiness, ClipboardCheck, GitBranch, MessageCircle, ShieldCheck } from 'lucide-react';
 import { Card, Shell, TopNav } from '@/components/ui';
 
 export default function Home() {
@@ -12,6 +12,7 @@ export default function Home() {
           <p className="mt-6 max-w-2xl text-lg leading-9 text-slate-600">من أول طلب إقامة إلى خدمات ما بعد الإقامة. اعرف حالتك بشكل مبدئي خلال دقائق، ثم تتحول بياناتك إلى حالة واضحة قابلة للمتابعة من الفريق.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/intake" className="inline-flex items-center gap-2 rounded-2xl bg-teal-700 px-6 py-3 font-bold text-white shadow-lg shadow-teal-900/10 hover:bg-teal-800">ابدأ التقييم <ArrowLeft size={18}/></Link>
+            <Link href="/pipeline" className="inline-flex items-center gap-2 rounded-2xl bg-slate-950 px-6 py-3 font-bold text-white shadow-lg shadow-slate-900/10 hover:bg-slate-800"><GitBranch size={18}/> مشاهدة مسار العملاء</Link>
             <Link href="/admin" className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-6 py-3 font-bold text-slate-800 hover:border-teal-200 hover:text-teal-800">مشاهدة لوحة الإدارة</Link>
           </div>
           <p className="mt-4 text-sm text-slate-500">هذه النتيجة مبدئية، ويتم تأكيد إمكانية البدء بعد مراجعة الفريق. لا يوجد طلب دفع في البداية.</p>
