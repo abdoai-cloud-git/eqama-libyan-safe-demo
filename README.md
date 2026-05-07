@@ -56,7 +56,8 @@ npm run build
 - `/` — Landing page
 - `/intake` — Qualification chat
 - `/admin` — Admin dashboard
-- `/admin/cases/[id]` — Case detail
+- `/admin/cases/[id]` — Case detail with client pipeline and state updates
+- `/status` — client-facing status/pipeline tracker
 - `/admin/workers` — Worker profiles
 - `/admin/services` — Post-residency services
 - `/admin/b2b` — B2B requests
