@@ -121,6 +121,9 @@ export default function PipelinePage() {
             </div>
             <Badge tone="teal">{clients.length} عملاء في الديمو</Badge>
           </div>
+          <div className="mb-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs font-bold leading-6 text-amber-900">
+            تلميح سريع: استخدم مقبض “اسحب” لتغيير المرحلة، وافتح التفاصيل لمراجعة المستندات والسجل، وزر “نقل للتالي” يحرك العميل خطوة واحدة فقط.
+          </div>
 
           <div className="overflow-x-auto pb-3">
             <div className="grid min-w-[1180px] grid-cols-5 gap-4 xl:min-w-0">
@@ -193,7 +196,6 @@ export default function PipelinePage() {
                             </button>
                           )}
                         </div>
-                        <p className="mt-2 text-[11px] leading-5 text-slate-400">فتح التفاصيل يراجع المستندات والسجل، ونقل للتالي يحرك العميل خطوة واحدة.</p>
                       </article>
                     ))}
                   </div>

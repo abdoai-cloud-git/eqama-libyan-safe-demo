@@ -1,0 +1,3 @@
+timestamp	cycle	commit	metric	status	description
+2026-05-07T00:00:00Z	0	69ef059	7.5	baseline	Initial tutorial guide is functional but visually heavy; intake has ambiguous Next/progress; pipeline repeats hints per card.
+2026-05-07T21:25:00Z	1	pending	8.5	keep	Compact guide strip, explicit guide controls, clearer progress label, intake copy clarification, single board-level pipeline hint.
