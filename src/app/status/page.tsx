@@ -34,7 +34,7 @@ export default function ClientStatusPage() {
       <PageTitle title="متابعة حالة العميل" subtitle="صفحة ديمو توضح كيف يمكن للعميل رؤية حالة الطلب، الإجراء التالي، والتحديثات العامة بدون كشف الملاحظات الداخلية." />
       <Card className="mb-6">
         <div className="mb-3 flex items-start gap-3 rounded-2xl bg-slate-50 p-3 text-sm leading-7 text-slate-600">
-          <ShieldCheck className="mt-1 text-teal-700" size={18} />
+          <ShieldCheck className="mt-1 text-amber-600" size={18} />
           <p>لحماية الخصوصية، يتطلب البحث رقم الحالة ورقم الهاتف معًا. في المنتج الحقيقي يمكن استبدال ذلك برابط متابعة خاص وآمن.</p>
         </div>
         <div className="grid gap-3 md:grid-cols-[1fr_1fr_140px]">
@@ -66,9 +66,9 @@ export default function ClientStatusPage() {
           </Card>
 
           <div className="grid gap-6 lg:grid-cols-[1fr_.75fr]">
-            <Card className="border-teal-200 bg-teal-50">
+            <Card className="border-amber-200 bg-amber-50">
               <div className="flex gap-3">
-                <div className="rounded-2xl bg-teal-700 p-3 text-white"><ShieldCheck size={22} /></div>
+                <div className="rounded-2xl bg-amber-600 p-3 text-white"><ShieldCheck size={22} /></div>
                 <div>
                   <h2 className="font-black text-slate-950">الإجراء المطلوب منك الآن</h2>
                   <p className="mt-2 text-sm leading-7 text-slate-700">{nextCustomerAction(item.status)}</p>
@@ -94,7 +94,7 @@ export default function ClientStatusPage() {
           <p className="mt-2 text-sm leading-7 text-slate-600">يجب أن يتطابق رقم الحالة ورقم الهاتف معًا. جرّب CASE-0001 مع 0911111101 من بيانات الديمو.</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <button type="button" className="btn-secondary" onClick={() => { setCaseQuery('CASE-0001'); setPhoneQuery('0911111101'); setSubmitted({ caseId: 'CASE-0001', phone: '0911111101' }); }}>تجربة بيانات الديمو</button>
-            <Link className="inline-flex rounded-2xl bg-teal-700 px-5 py-3 font-bold text-white" href="/intake">إنشاء طلب جديد</Link>
+            <Link className="inline-flex rounded-2xl bg-amber-600 px-5 py-3 font-bold text-white" href="/intake">إنشاء طلب جديد</Link>
           </div>
         </Card>
       ) : (

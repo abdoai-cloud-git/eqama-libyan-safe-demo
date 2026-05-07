@@ -73,7 +73,7 @@ export default function PipelinePage() {
         <section className="mb-6 rounded-3xl bg-slate-950 p-5 text-white shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-sm font-bold text-teal-200">العميل المحدد</p>
+              <p className="text-sm font-bold text-amber-200">العميل المحدد</p>
               <h2 className="mt-1 text-2xl font-black">{selectedClient.name}</h2>
               <p className="mt-2 text-sm leading-7 text-slate-300">{selectedClient.idNumber} · {selectedClient.owner} · {selectedClient.stageEnteredAt}</p>
             </div>
@@ -84,7 +84,7 @@ export default function PipelinePage() {
             </div>
           </div>
           <div className="mt-5 h-3 overflow-hidden rounded-full bg-white/10" dir="rtl">
-            <div className="h-full rounded-full bg-teal-400 transition-all" style={{ width: `${completion}%` }} />
+            <div className="h-full rounded-full bg-amber-400 transition-all" style={{ width: `${completion}%` }} />
           </div>
         </section>
 
@@ -97,12 +97,12 @@ export default function PipelinePage() {
                 onClick={() => moveClientToStage(selectedClient.idNumber, stage.id)}
                 className={cn(
                   'rounded-3xl border p-4 text-start transition hover:-translate-y-0.5 hover:shadow-md',
-                  selectedClient.currentStageId === stage.id ? 'border-teal-300 bg-teal-50' : 'border-slate-200 bg-white hover:border-teal-200'
+                  selectedClient.currentStageId === stage.id ? 'border-amber-300 bg-amber-50' : 'border-slate-200 bg-white hover:border-amber-200'
                 )}
               >
                 <div className="mb-3 flex items-center justify-between gap-2">
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-black text-slate-600">{stage.clients.length} عملاء</span>
-                  {selectedClient.currentStageId > stage.id ? <CheckCircle2 className="text-emerald-600" size={20} /> : selectedClient.currentStageId === stage.id ? <Clock3 className="text-teal-700" size={20} /> : <ArrowLeft className="text-slate-400" size={20} />}
+                  {selectedClient.currentStageId > stage.id ? <CheckCircle2 className="text-emerald-600" size={20} /> : selectedClient.currentStageId === stage.id ? <Clock3 className="text-amber-600" size={20} /> : <ArrowLeft className="text-slate-400" size={20} />}
                 </div>
                 <h3 className="font-black text-slate-950">{stage.name}</h3>
                 <p className="mt-2 text-xs leading-5 text-slate-500">{stage.description}</p>
@@ -132,7 +132,7 @@ export default function PipelinePage() {
                   }}
                   className={cn(
                     'min-h-[26rem] rounded-3xl border border-dashed border-slate-200 bg-slate-50 p-3 transition',
-                    draggingId && 'border-teal-300 bg-teal-50/40'
+                    draggingId && 'border-amber-300 bg-amber-50/40'
                   )}
                 >
                   <div className="mb-3 flex items-center justify-between gap-2">
@@ -146,8 +146,8 @@ export default function PipelinePage() {
                       <article
                         key={client.idNumber}
                         className={cn(
-                          'rounded-2xl border bg-white p-3 text-start shadow-sm transition hover:border-teal-300 hover:shadow-md',
-                          selectedClient.idNumber === client.idNumber && 'border-teal-400 ring-4 ring-teal-50',
+                          'rounded-2xl border bg-white p-3 text-start shadow-sm transition hover:border-amber-300 hover:shadow-md',
+                          selectedClient.idNumber === client.idNumber && 'border-amber-400 ring-4 ring-amber-50',
                           draggingId === client.idNumber && 'opacity-60'
                         )}
                       >
@@ -165,7 +165,7 @@ export default function PipelinePage() {
                               event.dataTransfer.effectAllowed = 'move';
                             }}
                             onDragEnd={() => setDraggingId(null)}
-                            className="shrink-0 cursor-grab rounded-full p-1 text-slate-300 hover:bg-slate-100 hover:text-teal-700"
+                            className="shrink-0 cursor-grab rounded-full p-1 text-slate-300 hover:bg-slate-100 hover:text-amber-600"
                             aria-label={`اسحب ${client.name} إلى مرحلة أخرى`}
                           >
                             <GripVertical size={18} aria-hidden="true" />
@@ -183,7 +183,7 @@ export default function PipelinePage() {
                         <div className="mt-3 flex gap-2">
                           <button type="button" onClick={() => selectClient(client.idNumber)} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700">فتح التفاصيل</button>
                           {client.currentStageId < pipelineStages.length && (
-                            <button type="button" onClick={() => moveClientToStage(client.idNumber, client.currentStageId + 1)} className="rounded-full bg-teal-700 px-3 py-1.5 text-xs font-bold text-white">
+                            <button type="button" onClick={() => moveClientToStage(client.idNumber, client.currentStageId + 1)} className="rounded-full bg-amber-600 px-3 py-1.5 text-xs font-bold text-white">
                               نقل للتالي
                             </button>
                           )}
@@ -222,7 +222,7 @@ function ClientDrawer({ open, client, onClose, onMoveNext, onSave }: { open: boo
       <aside className="absolute inset-x-0 bottom-0 max-h-[92vh] overflow-y-auto rounded-t-[2rem] bg-white p-4 shadow-2xl sm:inset-x-auto sm:inset-y-0 sm:right-0 sm:h-full sm:max-h-none sm:w-[480px] sm:rounded-l-[2rem] sm:rounded-tr-none sm:p-5">
         <div className="sticky top-0 z-10 mb-4 flex items-start justify-between gap-3 border-b border-slate-100 bg-white/95 pb-4 backdrop-blur">
           <div>
-            <p className="text-xs font-bold text-teal-700">درج تفاصيل العميل</p>
+            <p className="text-xs font-bold text-amber-600">درج تفاصيل العميل</p>
             <h2 className="mt-1 text-xl font-black text-slate-950">{client.name}</h2>
             <p className="mt-1 text-xs text-slate-500" dir="ltr">{client.idNumber}</p>
           </div>
@@ -244,9 +244,9 @@ function ClientDrawer({ open, client, onClose, onMoveNext, onSave }: { open: boo
 function NextAction({ client, onMoveNext }: { client: PipelineClient; onMoveNext: () => void }) {
   const canMove = client.currentStageId < pipelineStages.length;
   return (
-    <section className="rounded-3xl border border-teal-200 bg-teal-50 p-5 shadow-sm">
+    <section className="rounded-3xl border border-amber-200 bg-amber-50 p-5 shadow-sm">
       <div className="flex items-start gap-3">
-        <div className="rounded-2xl bg-teal-700 p-3 text-white"><ShieldCheck size={22} /></div>
+        <div className="rounded-2xl bg-amber-600 p-3 text-white"><ShieldCheck size={22} /></div>
         <div>
           <h2 className="font-black text-slate-950">الإجراء المطلوب الآن</h2>
           <p className="mt-2 text-sm leading-7 text-slate-700">{client.nextAction}</p>
@@ -281,7 +281,7 @@ function Activity({ client }: { client: PipelineClient }) {
     <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
       <h2 className="font-black text-slate-950">سجل المتابعة</h2>
       <div className="mt-4 space-y-3">
-        {client.activity.map((item) => <article key={item.id} className="border-s border-teal-200 pe-4"><p className="text-xs font-bold text-slate-500" dir="ltr">{item.at}</p><h3 className="mt-1 font-black text-slate-900">{item.title}</h3><p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p><p className="mt-1 text-xs text-slate-500">بواسطة {item.actor}</p></article>)}
+        {client.activity.map((item) => <article key={item.id} className="border-s border-amber-200 pe-4"><p className="text-xs font-bold text-slate-500" dir="ltr">{item.at}</p><h3 className="mt-1 font-black text-slate-900">{item.title}</h3><p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p><p className="mt-1 text-xs text-slate-500">بواسطة {item.actor}</p></article>)}
       </div>
     </section>
   );

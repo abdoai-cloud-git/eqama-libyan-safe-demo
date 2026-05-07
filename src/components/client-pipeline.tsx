@@ -35,8 +35,8 @@ export function ClientPipeline({ item }: { item: ResidencyCase }) {
             const done = index <= activeIndex;
             const current = index === activeIndex;
             return (
-              <div key={stage} className={`rounded-2xl border p-3 ${done ? 'border-teal-200 bg-teal-50' : 'border-slate-200 bg-slate-50'} ${current ? 'ring-2 ring-teal-500/20' : ''}`}>
-                <div className={`mb-2 grid h-8 w-8 place-items-center rounded-full text-xs font-black ${done ? 'bg-teal-700 text-white' : 'bg-white text-slate-400'}`}>{index + 1}</div>
+              <div key={stage} className={`rounded-2xl border p-3 ${done ? 'border-amber-200 bg-amber-50' : 'border-slate-200 bg-slate-50'} ${current ? 'ring-2 ring-amber-500/20' : ''}`}>
+                <div className={`mb-2 grid h-8 w-8 place-items-center rounded-full text-xs font-black ${done ? 'bg-amber-600 text-white' : 'bg-white text-slate-400'}`}>{index + 1}</div>
                 <p className="text-sm font-black text-slate-800">{stage}</p>
               </div>
             );

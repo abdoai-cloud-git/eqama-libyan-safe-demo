@@ -18,7 +18,7 @@ export default function PipelineStages({ client, stages, onStageChange }: Pipeli
           <h2 className="text-lg font-black text-slate-950">مسار الحالة</h2>
           <p className="mt-1 text-sm leading-6 text-slate-500">اضغط على أي مرحلة لتحريك العميل داخل الفَنَل.</p>
         </div>
-        <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-800">
+        <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-900">
           المرحلة الحالية: {stages.find((stage) => stage.id === client.currentStageId)?.name}
         </span>
       </div>
@@ -36,14 +36,14 @@ export default function PipelineStages({ client, stages, onStageChange }: Pipeli
               onClick={() => onStageChange(stage.id)}
               className={cn(
                 'group rounded-3xl border p-4 text-right transition hover:-translate-y-0.5 hover:shadow-md',
-                isCurrent && 'border-teal-300 bg-teal-50 shadow-sm',
+                isCurrent && 'border-amber-300 bg-amber-50 shadow-sm',
                 isDone && 'border-emerald-200 bg-emerald-50',
-                !isCurrent && !isDone && 'border-slate-200 bg-slate-50 hover:border-teal-200'
+                !isCurrent && !isDone && 'border-slate-200 bg-slate-50 hover:border-amber-200'
               )}
             >
               <div className="mb-3 flex items-center justify-between gap-2">
                 <span className="rounded-full bg-white px-2.5 py-1 text-xs font-black text-slate-500">{stage.id}</span>
-                <Icon className={cn('h-5 w-5', isCurrent ? 'text-teal-700' : isDone ? 'text-emerald-700' : 'text-slate-400')} />
+                <Icon className={cn('h-5 w-5', isCurrent ? 'text-amber-600' : isDone ? 'text-emerald-700' : 'text-slate-400')} />
               </div>
               <h3 className="font-black text-slate-950">{stage.name}</h3>
               <p className="mt-2 text-xs leading-5 text-slate-500">{stage.description}</p>

@@ -11,28 +11,28 @@ export function TopNav() {
     ['لوحة الإدارة','/admin'], ['الحالات','/admin'], ['مسار العملاء','/pipeline'], ['متابعة عميل','/status'], ['العمال','/admin/workers'], ['الخدمات','/admin/services'], ['طلبات الشركات','/admin/b2b'],
   ];
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-amber-300/20 bg-slate-950/95 text-white shadow-lg shadow-slate-950/10 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-2xl bg-teal-700 text-lg font-black text-white">آ</span>
-          <span><span className="block font-bold text-slate-950">الإقامة الليبية الآمنة</span><span className="text-xs text-slate-500">للخدمات العمالية</span></span>
+          <span className="grid h-11 w-11 place-items-center rounded-2xl border border-amber-300/40 bg-gradient-to-br from-amber-300 to-orange-600 text-sm font-black text-slate-950 shadow-inner shadow-white/20">LSR</span>
+          <span><span className="block font-bold text-white">الإقامة الآمنة الليبية</span><span className="text-xs text-amber-200">معنا خطوة بخطوة نحو الأمان</span></span>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex">
-          {links.map(([label, href]) => <Link key={href+label} href={href} className="rounded-full px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-100 hover:text-teal-800">{label}</Link>)}
+          {links.map(([label, href]) => <Link key={href+label} href={href} className="rounded-full px-3 py-2 text-sm font-semibold text-slate-300 hover:bg-white/10 hover:text-amber-200">{label}</Link>)}
         </nav>
-        <Link href="/intake" className="rounded-full bg-teal-700 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-teal-800">ابدأ التقييم</Link>
+        <Link href="/intake" className="rounded-full bg-gradient-to-l from-amber-300 to-orange-500 px-4 py-2 text-sm font-black text-slate-950 shadow-sm hover:from-amber-200 hover:to-orange-400">ابدأ التقييم</Link>
       </div>
     </header>
   );
 }
 
 export function Card({ children, className }: { children: ReactNode; className?: string }) {
-  return <section className={cn('rounded-3xl border border-slate-200 bg-white p-5 shadow-sm', className)}>{children}</section>;
+  return <section className={cn('rounded-3xl border border-amber-900/10 bg-white p-5 shadow-sm shadow-amber-950/5', className)}>{children}</section>;
 }
 
 export function Badge({ children, tone='slate' }: { children: ReactNode; tone?: 'slate'|'green'|'red'|'amber'|'blue'|'teal'|'purple' }) {
   const tones = {
-    slate:'bg-slate-100 text-slate-700', green:'bg-emerald-100 text-emerald-800', red:'bg-rose-100 text-rose-800', amber:'bg-amber-100 text-amber-800', blue:'bg-blue-100 text-blue-800', teal:'bg-teal-100 text-teal-800', purple:'bg-purple-100 text-purple-800'
+    slate:'bg-slate-100 text-slate-700', green:'bg-emerald-100 text-emerald-800', red:'bg-rose-100 text-rose-800', amber:'bg-amber-100 text-amber-800', blue:'bg-blue-100 text-blue-800', teal:'bg-amber-100 text-amber-900', purple:'bg-purple-100 text-purple-800'
   };
   return <span className={cn('inline-flex rounded-full px-2.5 py-1 text-xs font-bold', tones[tone])}>{children}</span>;
 }
