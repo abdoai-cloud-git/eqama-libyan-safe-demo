@@ -30,11 +30,14 @@ Source file for this branch:
 - `results/current-situation-analysis.md`
 - `results/premium-website-plan.md`
 - `results/results-on-the-table-plan.md`
+- `results/new-website-stripe-style-plan.md`
 
 Important current decision:
 
 - The frontend demo is considered done and will not be used as the main focus from now on.
 - The active focus is preparing business-facing results: evidence, diagnosis, operating rules, measurement plan, and decision materials for the LSR team.
+- New website direction requested: Stripe-style system storytelling for Libyan Safe Residency.
+- Website copy source of truth: user-provided PDF. Do not finalize public copy until the PDF is attached/extracted and checked.
 
 Core diagnosis:
 
