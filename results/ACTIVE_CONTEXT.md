@@ -14,7 +14,7 @@ Other remembered projects are intentionally parked/sleeping unless the user expl
 ## Working branch
 
 - Branch: `results`
-- Purpose: keep the next iteration focused on collecting/building presentable results for the Libyan Safe Residency demo.
+- Purpose: the frontend demo is done; the next iteration is focused on bringing business results, diagnosis, operating rules, and decision materials to the table.
 
 ## Project identity
 
@@ -29,6 +29,12 @@ Source file for this branch:
 
 - `results/current-situation-analysis.md`
 - `results/premium-website-plan.md`
+- `results/results-on-the-table-plan.md`
+
+Important current decision:
+
+- The frontend demo is considered done and will not be used as the main focus from now on.
+- The active focus is preparing business-facing results: evidence, diagnosis, operating rules, measurement plan, and decision materials for the LSR team.
 
 Core diagnosis:
 
