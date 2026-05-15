@@ -6,11 +6,15 @@ For the new Libyan Safe Residency website, use a **Stripe-style system-storytell
 
 ## Content source-of-truth rule
 
-The website content copy must use the user-provided **PDF** as the source of truth once the PDF is available in this workspace.
+The user-provided **PDF has been downloaded and extracted**. Treat the extracted source document as the public website copy authority:
 
-Until that PDF is attached/extracted, this document should be treated as visual/structural direction only — not final website copy.
+- Source PDF: `assets/source-docs/lsr-source.pdf` (local working file; do not commit/publish unless needed)
+- Extracted text: `assets/source-docs/lsr-source.txt`
+- Clean working brief: `results/lsr-pdf-source-of-truth.md`
 
-The current situation analysis and results-table plan can support strategy, but final public wording, service names, claims, contact details, and business descriptions must be checked against the PDF before implementation.
+The current situation analysis and results-table plan can support operational strategy, but final public wording, service names, claims, contact details, and business descriptions must follow the PDF-derived source-of-truth brief.
+
+Important adjustment after PDF extraction: the public homepage should first present LSR as a **Libyan workforce/residency/legal-compliance services company**, not only as a social-inbox operating-system demo. The social-inbox/case-management story remains useful as an internal/digital-operations layer, but it should not overpower the official service identity from the PDF.
 
 This does **not** mean copying Stripe branding. It means borrowing the principles that make Stripe feel premium, trustworthy, and system-oriented:
 
@@ -102,18 +106,104 @@ Avoid overusing `font-black`; premium Stripe-like pages often feel more refined 
 
 ## Website narrative
 
-The homepage should tell one story:
+After extracting the PDF, the homepage should tell the official public story first:
 
-1. Demand already exists.
-2. Social inboxes are not operational systems.
-3. LSR needs a structured layer between inquiry and case follow-up.
-4. Every serious inquiry should become a case with owner, status, next action, documents, and payment visibility.
-5. The team stays in control.
-6. Clients get clearer next steps.
+1. LSR is a Libyan company providing integrated workforce, residency, contract, compliance, and HR-support services.
+2. The company handles skilled foreign labor files with professionalism, confidentiality, and legal commitment from start to completion.
+3. Clients can request workforce support across healthcare, hotels, education, manufacturing, construction, technology, and agriculture.
+4. The work process is systematic: needs study → role requirements → verified candidates → legal/regulatory follow-up → stable compliant work.
+5. Trust comes from procedure clarity, continuous follow-up, knowledge of competent authorities, and reducing time/effort/cost for clients.
+6. The digital/social-inbox/case-management story should be positioned as an operational layer that supports the service business — not as the whole company identity.
 
 ---
 
-## Homepage structure
+## PDF-aligned homepage structure
+
+### 1. Public hero
+
+Goal: communicate the company’s official market position immediately.
+
+Recommended headline:
+
+> حلول متكاملة لإدارة شؤون العمالة الوافدة في ليبيا
+
+Subheadline:
+
+> شركة الإقامة الآمنة الليبية للخدمات العمالية تساعد الشركات والمؤسسات على تنظيم ملفات العمالة الأجنبية، من الاستقدام والإقامات والعقود إلى الامتثال والمتابعة والدعم اللوجستي، باحترافية وسرية والتزام بالقانون.
+
+Primary CTA:
+
+> تواصل معنا
+
+Secondary CTA:
+
+> استعرض خدماتنا
+
+Hero visual:
+
+- Stripe-like floating cards, but with real LSR service concepts:
+  - الإقامات والعقود
+  - استقدام العمالة
+  - الامتثال والمتابعة
+  - حماية حقوق العامل وصاحب العمل
+  - السكن والدعم اللوجستي
+  - حلول الموارد البشرية
+
+### 2. Who we are
+
+Use the PDF-derived “من نحن؟” copy from `results/lsr-pdf-source-of-truth.md`.
+
+### 3. Services
+
+Six service cards:
+
+1. الإقامات والعقود
+2. استقدام العمالة
+3. الامتثال والمتابعة
+4. حماية حقوق العمال
+5. السكن والدعم اللوجستي
+6. حلول الموارد البشرية
+
+### 4. Sectors served
+
+Seven sector cards:
+
+1. قطاع الصحة
+2. قطاع الفنادق
+3. قطاع التعليم
+4. قطاع المصانع
+5. قطاع البناء والتشييد
+6. قطاع التكنولوجيا
+7. قطاع الزراعة
+
+### 5. Workflow
+
+Process diagram:
+
+> دراسة الاحتياج → تحديد المؤهلات → توفير الكوادر المناسبة → متابعة الإجراءات القانونية والتنظيمية → استقرار العمل دون مخالفات
+
+### 6. Why LSR
+
+Use PDF reasons:
+
+- عمالة مهنية ماهرة أجنبية ومحلية
+- خبرة في الملفات العمالية المعقدة
+- معرفة بالإجراءات والجهات المختصة
+- متابعة مستمرة حتى إتمام المعاملة
+- تقليل الوقت والجهد والتكاليف
+- التزام قانوني كامل دون مجازفة
+
+### 7. Contact
+
+Use only confirmed PDF details:
+
+- `LIBYANSAFERESIDENCE@OUTLOOK.COM`
+- `شارع السيدي طرابلس`
+- Phone numbers remain masked until user confirms full numbers.
+
+---
+
+## Internal/demo narrative layer
 
 ### 1. Hero
 

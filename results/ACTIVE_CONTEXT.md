@@ -31,13 +31,16 @@ Source file for this branch:
 - `results/premium-website-plan.md`
 - `results/results-on-the-table-plan.md`
 - `results/new-website-stripe-style-plan.md`
+- `results/lsr-pdf-source-of-truth.md`
 
 Important current decision:
 
 - The frontend demo is considered done and will not be used as the main focus from now on.
 - The active focus is preparing business-facing results: evidence, diagnosis, operating rules, measurement plan, and decision materials for the LSR team.
 - New website direction requested: Stripe-style system storytelling for Libyan Safe Residency.
-- Website copy source of truth: user-provided PDF. Do not finalize public copy until the PDF is attached/extracted and checked.
+- Website copy source of truth: PDF has been downloaded/extracted and summarized in `results/lsr-pdf-source-of-truth.md`.
+- Public website must first present LSR as a Libyan workforce/residency/legal-compliance services company; the social-inbox/case-management story is a supporting operational layer, not the whole public identity.
+- Do not publish full phone numbers until the user confirms them, because the extracted PDF shows masked numbers only.
 
 Core diagnosis:
 

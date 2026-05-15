@@ -20,6 +20,9 @@
 # production
 /build
 
+# local source documents
+/assets/source-docs/*.pdf
+
 # misc
 .DS_Store
 *.pem
