@@ -23,6 +23,26 @@ Other remembered projects are intentionally parked/sleeping unless the user expl
 - Arabic slogan: “معنا خطوة بخطوة نحو الأمان”
 - Deployment fork target: `abdoai-cloud-git/eqama-libyan-safe-demo`
 
+## Current situation analysis
+
+Source file for this branch:
+
+- `results/current-situation-analysis.md`
+
+Core diagnosis:
+
+> Libyan Safe Residency already has demand coming from social media, but the current intake and follow-up process depends too much on manual inbox handling, informal qualification, spreadsheets, and memory, which creates a real risk of missed qualified clients and unclear case status.
+
+Important constraints from the analysis:
+
+- Do not jump straight into solutions before respecting the current-state diagnosis.
+- Main lead source is TikTok inbox / direct messages, with Facebook also present.
+- Current process is manual: inbox replies, Gemini used manually, sheets/Excel, paper documents, cash deposit, human memory.
+- Payment happens later after review and paper/passport delivery, not at first inquiry.
+- Documents/passports are sensitive and physically handled.
+- Early qualification must separate preliminarily qualified, missing-info, missing-documents, not-currently-able, and manual-review cases.
+- Team context: Ayoub and the technical employee are first-stage full-access users.
+
 ## Immediate rule for future agents
 
 Before touching other projects, return to this repo and continue from the Libyan Safe Residency context unless the user explicitly changes focus.
