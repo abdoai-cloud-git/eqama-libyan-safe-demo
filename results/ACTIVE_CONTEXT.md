@@ -40,7 +40,7 @@ Important current decision:
 - New website direction requested: Stripe-style system storytelling for Libyan Safe Residency.
 - Website copy source of truth: PDF has been downloaded/extracted and summarized in `results/lsr-pdf-source-of-truth.md`.
 - Public website must first present LSR as a Libyan workforce/residency/legal-compliance services company; the social-inbox/case-management story is a supporting operational layer, not the whole public identity.
-- Do not publish full phone numbers until the user confirms them, because the extracted PDF shows masked numbers only.
+- User confirmed to use the phone numbers from the PDF/source material: `+218****3134` and `+218****0212`.
 
 Core diagnosis:
 

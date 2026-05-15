@@ -27,7 +27,7 @@ This document is the working content source for the new LSR website. Use it to p
 - Phone 1: `+218****3134`
 - Phone 2: `+218****0212`
 
-> Note: phone numbers are partially masked in extracted text/PDF view. Do not publish full numbers unless user confirms them.
+> User confirmed: use the phone numbers as shown/provided in the PDF/source material.
 
 ---
 
@@ -295,7 +295,6 @@ Avoid unless explicitly scoped/confirmed:
 
 - Claims of guaranteed government approval
 - Claims of official partnership with ministries or authorities
-- Publishing full phone numbers from masked PDF extraction
 - Overstated AI automation claims
 - Payment promises or requests before preliminary review
 - Generic SaaS words that erase the labor-services business identity

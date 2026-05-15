@@ -195,11 +195,12 @@ Use PDF reasons:
 
 ### 7. Contact
 
-Use only confirmed PDF details:
+Use only confirmed PDF/user-approved details:
 
 - `LIBYANSAFERESIDENCE@OUTLOOK.COM`
 - `شارع السيدي طرابلس`
-- Phone numbers remain masked until user confirms full numbers.
+- `+218****3134`
+- `+218****0212`
 
 ---
 
